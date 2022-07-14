@@ -12,7 +12,6 @@
     </properties>
     
     <dependencies>
-        <!-- HIBERNATE -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -70,10 +69,8 @@
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
-        </dependency>
-        
-
-        
+        </dependency>      
     </dependencies>
+    
     <name>Loja_provaFinal</name>
 </project>
