@@ -1,4 +1,4 @@
-package br.com.loja.apiEndereco;
+package br.com.loja.api.Endereco;
 
 import com.owlike.genson.Genson;
 import com.owlike.genson.GensonBuilder;

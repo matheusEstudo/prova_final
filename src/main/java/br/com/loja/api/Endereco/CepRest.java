@@ -1,4 +1,4 @@
-package br.com.loja.apiEndereco;
+package br.com.loja.api.Endereco;
 
 import br.com.loja.entidade.Endereco;
 import com.sun.jersey.api.client.Client;
@@ -9,8 +9,8 @@ import com.sun.jersey.api.client.filter.LoggingFilter;
 
 public class CepRest {
 
-    private Client client;
-    private WebResource webResource;
+    private static Client client;
+    private static WebResource webResource;
 
     public CepRest() {
         ClientConfig clientConfig = new DefaultClientConfig(GensonProvider.class);
@@ -20,7 +20,7 @@ public class CepRest {
         webResource = client.resource("https://viacep.com.br/ws/");
     }
 
-    public Endereco pesquisaCep(String cep) {
+    public static Endereco pesquisaCep(String cep) {
         return webResource.path(cep).path("/json").get(Endereco.class);
 
     }
@@ -28,11 +28,11 @@ public class CepRest {
     public static void main(String... args) {
         CepRest notaREST = new CepRest();
 
-        Endereco endereco = notaREST.pesquisaCep("88110400");
+        Endereco endereco = notaREST.pesquisaCep("88130-810");
 
         System.out.println("");
         System.out.println("Cep: " + endereco.getCep());
         System.out.println("Logradouro: " + endereco.getLogradouro());
-        System.out.println("cidade: " + endereco.getEstado());
+        System.out.println("cidade: " + endereco.getBairro());
     }
 }

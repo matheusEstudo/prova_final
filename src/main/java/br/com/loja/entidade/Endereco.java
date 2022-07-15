@@ -23,10 +23,10 @@ public class Endereco implements Serializable {
     private String cep;
 
     @Column
-    private String estado;
+    private String bairro;
 
     @Column
-    private String pais;
+    private String uf;
 
     @OneToOne(mappedBy = "endereco")
     private Cliente cliente;
@@ -34,11 +34,13 @@ public class Endereco implements Serializable {
     public Endereco() {
     }
 
-    public Endereco(String logradouro, String cep, String estado, String pais) {
+    public Endereco(Long id, String logradouro, String cep, String bairro, String uf, Cliente cliente) {
+        this.id = id;
         this.logradouro = logradouro;
         this.cep = cep;
-        this.estado = estado;
-        this.pais = pais;
+        this.bairro = bairro;
+        this.uf = uf;
+        this.cliente = cliente;
     }
 
 }

@@ -24,4 +24,12 @@ public class GeradorUtil {
         System.out.println(matricula("Cliente"));
     }
 
+    public static boolean validadeStr(String texto) {
+        return texto.length() >= 3;
+    }
+
+    public static boolean validadeSenha(String texto) {
+        return texto.length() == 14;
+    }
+
 }
